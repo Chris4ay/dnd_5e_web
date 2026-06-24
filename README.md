@@ -12,7 +12,7 @@
 
 ## 技术说明
 
-本网页由 **AI（Claude）生成**，使用纯静态 HTML + CSS + JavaScript 构建，零后端依赖。
+本网页由 **AI（DeepSeek V4 Flash）生成**，使用纯静态 HTML + CSS + JavaScript 构建，零后端依赖。
 
 - 阅读器支持目录树浏览、全文搜索、阅读进度保存等功能
 - 部署于 Cloudflare Pages
