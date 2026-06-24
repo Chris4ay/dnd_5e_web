@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5E 不全书</title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="reader-mode">
+<div id="wrapper">
+  <header id="header" class="compact">
+    <div class="logo">
+      <h1><a href="http://154.64.255.98:23333/index.html" id="logoTitle">5E 不全书</a></h1>
+      <span class="tagline"></span>
+    </div>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="..." oninput="doSearch(this.value)">
+      <div id="searchResults" class="search-results"></div>
+    </div>
+  </header>
+
+  <div id="reader">
+    <nav id="sidebar">
+      <div class="sidebar-header">
+        <h3>📖 目录</h3>
+        <button onclick="locateInToc()" class="locate-btn" title="定位到当前章节">定位</button>
+        <button onclick="toggleSidebar()" class="close-btn">✕</button>
+      </div>
+      <div id="toc">
+      </div>
+    </nav>
+
+    <main id="content-area">
+      <button id="menuToggle" onclick="toggleSidebar()">☰ 目录</button>
+      <div id="pageContent" class="page-content">
+        <div class="welcome-page">
+          <h2>选择一个章节开始阅读</h2>
+          <p>从左侧目录树选择，或在顶栏搜索。</p>
+        </div>
+      </div>
+      <div id="pageNav" class="page-nav"></div>
+    </main>
+  </div>
+
+  <footer id="footer">
+    <p id="footerText">5E 不全书 · 基于 <a href="https://github.com/DND5eChm" target="_blank">DND五版不全书</a></p>
+  </footer>
+</div>
+
+<button id="goTop">↑</button>
+<script>
+(function(){
+  var btn = document.getElementById('goTop');
+  if (!btn) return;
+  // 回到顶部
+  btn.addEventListener('click', function(){
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+  // 滚动显示/隐藏
+  window.addEventListener('scroll', function(){
+    if (window.scrollY > 300) {
+      btn.style.setProperty('display', 'block', 'important');
+    } else {
+      btn.style.setProperty('display', 'none', 'important');
+    }
+  });
+})();
+</script>
+
+<script src="js/reader2.js?v=2"></script>
+</body>
+</html>
